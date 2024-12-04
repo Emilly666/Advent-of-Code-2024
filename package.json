@@ -1,0 +1,19 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "description": "coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emilly666/Advent-of-Code-2024.git"
+  },
+  "author": "Emilia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emilly666/Advent-of-Code-2024/issues"
+  },
+  "homepage": "https://github.com/Emilly666/Advent-of-Code-2024#readme"
+}
