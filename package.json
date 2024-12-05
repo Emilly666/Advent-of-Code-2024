@@ -4,7 +4,7 @@
   "description": "coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && node dist/index.js",
+    "test": "tsc && node ./dist/ts/index.js",
     "lint": "eslint ts/src/**/*.ts"
   },
   "repository": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/Emilly666/Advent-of-Code-2024#readme",
   "dependencies": {
-    "@types/node": "^22.10.1"
+    "@types/node": "^22.10.1",
+    "cowsay": "^1.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
