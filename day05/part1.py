@@ -26,6 +26,6 @@ for num, order in enumerate(prints):
 
 sum = 0
 for i in good:
-  sum += int(prints[i][(len(prints[i]) - 1)//2])
+  sum += int(prints[i][len(prints[i]) // 2])
 
 print(sum)
