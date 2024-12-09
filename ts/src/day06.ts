@@ -1,4 +1,4 @@
-import { readFile } from '../utils.js';
+import { readFile, isArrayInArray, addArray } from '../utils.js';
 
 const directions = [
   [-1, 0], //up
@@ -95,19 +95,6 @@ function findNext(input: string[], { pos, d }: { pos: number[]; d: number }) {
   }
 }
 
-function addArray(a: number[], b: number[]) {
-  return [a[0] + b[0], a[1] + b[1]];
-}
-
-function isArrayInArray(arr: number[][], item: number[]) {
-  const item_as_string = JSON.stringify(item);
-
-  const contains = arr.some(function (ele) {
-    return JSON.stringify(ele) === item_as_string;
-  });
-  return contains;
-}
-
 function isLoop(input: string[], start: { pos: number[]; d: number }) {
   const visited = [start];
 
@@ -121,4 +108,3 @@ function isLoop(input: string[], start: { pos: number[]; d: number }) {
     visited.push(next);
   }
 }
-
