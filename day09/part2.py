@@ -1,19 +1,34 @@
 from pathlib import Path
-from pprint import pprint
 
-input = open(Path(__file__).with_name('test.txt'), "r" ).read()
-disk = []
+input = open(Path(__file__).with_name('input.txt'), "r" ).read()
+files = {}
+blanks = []
 fid = 0
+pos = 0
 
 for i, char in enumerate(input):
     if i % 2 == 0:
-        disk.append((fid, char))
+        files[fid] = (pos, int(char))
         fid += 1
     else:
-        disk.append(('.', char))
+        if char != '0':
+            blanks.append((pos, int(char)))
+    pos += int(char)
 
-pprint(disk)
+while fid > 0:
+    fid -= 1
+    pos, size = files[fid]
+    for i, (start, length) in enumerate(blanks):
+        if start >= pos:
+            blanks = blanks[:i]
+            break
+        if size <= length:
+            files[fid] = (start, size)
+            if size == length:
+                blanks.pop(i)
+            else:
+                blanks[i] = (start + size, length - size)
+            break
 
-for i in range(len(disk) - 1, 0, -1):
-    if  not disk[i][0] == '.':
+print(sum([ sum([ fid * x for x in range(files[fid][0], files[fid][0] + files[fid][1]) ])  for fid in files]))
         
