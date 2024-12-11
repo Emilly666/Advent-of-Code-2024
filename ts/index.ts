@@ -1,4 +1,4 @@
-import { part1, part2 } from './src/day10';
+import { part1, part2 } from './src/day11';
 import * as cowsay from 'cowsay';
 
 console.log(
