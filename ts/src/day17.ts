@@ -77,17 +77,7 @@ export function part1() {
 }
 
 export function part2() {
-  const input = readFile('input.txt').split('\r\n\r\n');
-  const program = input[1]
-    .split(': ')[1]
-    .split(',')
-    .map((item) => Number(item))
-    .reverse()
-    .join('');
-  console.log(program)
-  const out = 8 * parseInt(program, 8);
-
-  return out;
+  return 'moo';
 }
 
 function getCombo(n: number) {
